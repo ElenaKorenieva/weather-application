@@ -22,10 +22,6 @@ const isDayTime = (icon) => {
 updateWeatherApp = (city) => {
   let dayTimeSrc = null;
 
-  console.log(city);
-
-  console.log("path", city.weather[0].main);
-
   const imageName = city.weather[0].main.toLowerCase();
   const isImageDayOrNight = city.weather[0].icon;
   const iconSrc = `./images/${imageName}.svg`;
@@ -69,7 +65,6 @@ updateWeatherApp = (city) => {
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const citySearched = cityValue.value.trim();
-  console.log(citySearched);
   searchForm.reset();
 
   requestCity(citySearched)
